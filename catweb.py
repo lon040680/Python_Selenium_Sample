@@ -10,13 +10,15 @@ options.add_argument('--headless')  # 启用无界面模式
 # 创建Chrome WebDriver对象
 driver = webdriver.Chrome(options=options)
 
+url = input("请输入要访问的网页：")
+
 # 循环抓取值
 while True:
     # 打开网页
-    driver.get('http://bobo.hm-tz.com/')
+    driver.get('http://' + url + '.hm-tz.com/')
 
     # 等待页面加载完全
-    driver.implicitly_wait(10)
+    time.sleep(2)
 
     # 找到具有特定id的元素
     try:
@@ -29,9 +31,6 @@ while True:
 
     except Exception as e:
         print("Error occurred:", str(e))
-
-    # 暂停2秒
-    time.sleep(2)
 
 # 关闭浏览器
 driver.quit()
