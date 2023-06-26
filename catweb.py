@@ -15,7 +15,7 @@ url = input("请输入要访问的网页：")
 # 循环抓取值
 while True:
     # 打开网页
-    driver.get('http://' + url + '.hm-tz.com/')
+    driver.get('http://' + url)
 
     # 等待页面加载完全
     time.sleep(2)
